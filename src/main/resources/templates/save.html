@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Agregar Tarea</title>
+</head>
+
+<body>
+
+ <div> 
+ 
+ <form action="#" th:action="@{/save}" th:object="${tarea}" method="post">
+ <div>
+  <label for="nombre">Tarea</label>
+  <input type="text" id="nombre" th:field="*{nombre}" name="nombre">
+   </div>
+   
+   <div>
+ <label for="descripcion">descripcion</label>
+  <input type="text" id="descripcion" th:field="*{descripcion}" name="descripcion">
+   </div>
+   <div>
+  <label for="prioridad">prioridad</label>
+  <input type="text" id="prioridad" th:field="*{prioridad}" name="prioridad">
+   </div>
+   
+  
+  <button type="submit"> Guardar </button>
+  
+  </form>
+ 
+ </div>
+
+
+</body>
+</html>

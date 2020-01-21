@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Tareas</title>
+</head>
+
+<body>
+
+<h1> TAREITAS </h1>
+
+   <div>
+   <br>
+   
+   <div>
+     <a href="/save/0"> Agregar </a>
+   </div>
+   
+   <div th:switch="${list}">
+    <h2 th:case="null"> No hay personas  </h2>
+     <div th:case="*">
+      <h2>Tareas</h2>
+      <table>
+      <thead>
+      <tr>
+        <th>Tarea</th>
+        <th>Descripcion</th>
+        <th>Prioridad</th>
+        
+        <th> </th>
+        <th> </th>
+        
+       </thead>
+       <tbody>
+       
+       <tr th:each="tarea : ${list}">
+        <td th:text="${tarea.nombre}">
+        <td th:text="${tarea.descripcion}">
+        <td th:text="${tarea.prioridad}">
+       
+       <td><a th:href="@{/save/{id}(id=${tarea.id})}">Editar</a> </td>
+       <td><a th:href="@{/delete/{id}(id=${tarea.id})}">Eliminar</a> </td>
+       
+       
+       </tr>
+       
+      
+       </tbody>
+   </table> 
+   </div>
+   </div>
+</div>
+</body>
+</html>
