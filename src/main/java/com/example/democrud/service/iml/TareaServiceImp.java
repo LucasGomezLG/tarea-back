@@ -9,6 +9,8 @@ import com.example.democrud.dao.api.TareaDaoAPI;
 import com.example.democrud.model.Tarea;
 import com.example.democrud.service.api.TareaServiceApi;
 
+import demo.example.democrud.dto.TareaDto;
+
 @Service
 public class TareaServiceImp extends GenericServiceImpl<Tarea, Long> implements TareaServiceApi{
 
@@ -20,6 +22,7 @@ public class TareaServiceImp extends GenericServiceImpl<Tarea, Long> implements 
 		
 		return tareaDaoAPI;
 	}
+
 
 	
 	

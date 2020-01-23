@@ -24,6 +24,19 @@ public class Tarea {
 	@Column
 	private String prioridad;
 
+	public Tarea() {
+		
+		
+	}
+	
+	public Tarea(String nombre, String descripcion, String prioridad) {
+		
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.prioridad = prioridad;
+		
+	}
+	
 	
 	public Long getId() {
 		return id;
