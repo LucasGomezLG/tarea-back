@@ -1,7 +1,6 @@
 package demo.example.democrud.dto;
 
-import com.example.democrud.model.src.Actividad;
-import com.example.democrud.model.src.Tarea;
+import com.example.democrud.model.Actividad;
 
 public class ActividadesDTO {
 

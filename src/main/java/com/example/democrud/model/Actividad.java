@@ -1,4 +1,6 @@
-package com.example.democrud.model.src;
+package com.example.democrud.model;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,6 +23,11 @@ public class Actividad {
 	
 	@Column
 	private String descripcion;
+
+	@JsonBackReference
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_tarea")
+	private Tarea tarea;
 
 
 	public Actividad(){
@@ -57,10 +64,16 @@ public class Actividad {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	
-	
-	
-	
-	
-	
+
+	public Tarea getTarea() {
+		return tarea;
+	}
+
+	public void setTarea(Tarea tarea) {
+		this.tarea = tarea;
+	}
+
+	public Long getIdTarea(){
+		return this.tarea.getId();
+	}
 }

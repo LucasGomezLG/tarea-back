@@ -1,4 +1,4 @@
-package com.example.democrud.model.test;
+package com.example.democrud;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -7,8 +7,8 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.example.democrud.model.src.Tarea;
-import com.example.democrud.model.src.Usuario;
+import com.example.democrud.model.Tarea;
+import com.example.democrud.model.Usuario;
 
 public class UsuarioTest {
 

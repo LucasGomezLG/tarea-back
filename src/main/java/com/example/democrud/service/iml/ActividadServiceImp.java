@@ -6,10 +6,8 @@ import org.springframework.stereotype.Service;
 
 import com.example.democrud.commons.GenericServiceImpl;
 import com.example.democrud.dao.api.ActividadDaoApi;
-import com.example.democrud.model.src.Actividad;
-import com.example.democrud.model.src.Tarea;
+import com.example.democrud.model.Actividad;
 import com.example.democrud.service.api.ActividadServiceApi;
-import com.example.democrud.service.api.TareaServiceApi;
 
 @Service
 public class ActividadServiceImp extends GenericServiceImpl<Actividad, Long> implements ActividadServiceApi {
