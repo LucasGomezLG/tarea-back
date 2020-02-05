@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.democrud.model.Tarea;
+import com.example.democrud.model.src.Tarea;
 import com.example.democrud.service.api.TareaServiceApi;
 
 @Controller

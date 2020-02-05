@@ -1,43 +1,39 @@
-package com.example.democrud.model;
-
+package com.example.democrud.model.src;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Tarea {
-	
+public class Actividad {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column
-	private String nombre;
+	private boolean completa;
 	
 	@Column
 	private String descripcion;
-	
-	@Column
-	private String prioridad;
 
-	public Tarea() {
-		
-		
+
+	public Actividad(){
+
 	}
-	
-	public Tarea(String nombre, String descripcion, String prioridad) {
+
+	public Actividad(boolean completa, String descripcion) {
 		
-		this.nombre = nombre;
+		this.completa = completa;
 		this.descripcion = descripcion;
-		this.prioridad = prioridad;
 		
 	}
-	
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -46,12 +42,12 @@ public class Tarea {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public boolean isCompleta() {
+		return completa;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setCompleta(boolean completa) {
+		this.completa = completa;
 	}
 
 	public String getDescripcion() {
@@ -61,16 +57,10 @@ public class Tarea {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
-	public String getPrioridad() {
-		return prioridad;
-	}
-
-	public void setPrioridad(String prioridad) {
-		this.prioridad = prioridad;
-	}
-
 	
-
-
+	
+	
+	
+	
+	
 }

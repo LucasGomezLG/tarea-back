@@ -1,6 +1,7 @@
 package com.example.democrud.controller;
 
-import com.example.democrud.model.Usuario;
+import com.example.democrud.model.src.Usuario;
+import com.example.democrud.service.api.UsuarioServiceApi;
 import com.example.democrud.service.iml.UsuarioService;
 import demo.example.democrud.dto.UsuarioDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +18,12 @@ import java.util.Optional;
 public class UsuarioController {
 
     @Autowired
-    private UsuarioService usuarioService;
+    private UsuarioServiceApi usuarioServiceApi;
 
     @RequestMapping(method = RequestMethod.POST, value ="/login")
     public ResponseEntity login(@RequestBody UsuarioDTO usuarioDTO) {
 
-        Optional<Usuario> maybeUser = usuarioService.login(usuarioDTO);
+        Optional<Usuario> maybeUser = usuarioServiceApi.login(usuarioDTO);
         if(! maybeUser.isPresent()){
             return new ResponseEntity<>("Please, login",HttpStatus.UNAUTHORIZED);
         }
@@ -37,12 +38,12 @@ public class UsuarioController {
             return new ResponseEntity<>("Error data request", HttpStatus.BAD_REQUEST);
         }
 
-        Optional<Usuario> maybeUser = usuarioService.findByUsername(usuarioDTO.getUsername());
+        Optional<Usuario> maybeUser = usuarioServiceApi.findByUsername(usuarioDTO.getUsername());
         if(maybeUser.isPresent()){
             return new ResponseEntity<>("Please choose another username", HttpStatus.UNAUTHORIZED);
         }
 
-        return new ResponseEntity<>(usuarioService.signup(usuarioDTO),HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(usuarioServiceApi.signup(usuarioDTO),HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/user")
@@ -55,7 +56,7 @@ public class UsuarioController {
             return new ResponseEntity<>("Wrong query parameters", HttpStatus.BAD_REQUEST);
         }
 
-        Optional<Usuario> maybeUser = this.usuarioService.findById(userId);
+        Optional<Usuario> maybeUser = this.usuarioServiceApi.findById(userId);
 
         if(! maybeUser.isPresent()){
             return new ResponseEntity<>("User does not exist",HttpStatus.NOT_FOUND);

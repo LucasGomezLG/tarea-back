@@ -1,7 +1,8 @@
 package com.example.democrud.dao.api;
 
-import com.example.democrud.model.Usuario;
 import org.springframework.data.repository.CrudRepository;
+
+import com.example.democrud.model.src.Usuario;
 
 import java.util.Optional;
 
