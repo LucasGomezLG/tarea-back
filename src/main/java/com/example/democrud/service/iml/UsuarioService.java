@@ -2,7 +2,7 @@ package com.example.democrud.service.iml;
 
 import com.example.democrud.commons.GenericServiceImpl;
 import com.example.democrud.dao.api.UsuarioDaoApi;
-import com.example.democrud.model.src.Usuario;
+import com.example.democrud.model.Usuario;
 import com.example.democrud.service.api.UsuarioServiceApi;
 import demo.example.democrud.dto.UsuarioDTO;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.example.democrud.model.src;
+package com.example.democrud.model;
 
 import java.util.ArrayList;
 import java.util.List;

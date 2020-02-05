@@ -1,4 +1,4 @@
-package com.example.democrud.model.src;
+package com.example.democrud.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Tarea {
@@ -37,8 +38,9 @@ public class Tarea {
 	@JoinColumn(name = "id_usuario")
 	private Usuario usuario;
 
+	@JsonManagedReference
 	@OneToMany(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.ALL)
-	private List<Actividad> actividades;
+	private List<Actividad> actividades = new ArrayList<>();
 
 	public Tarea() {
 

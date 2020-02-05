@@ -1,15 +1,13 @@
 package com.example.democrud.controller;
 
-import com.example.democrud.model.src.Usuario;
+import com.example.democrud.model.Usuario;
 import com.example.democrud.service.api.UsuarioServiceApi;
-import com.example.democrud.service.iml.UsuarioService;
 import demo.example.democrud.dto.UsuarioDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.Option;
 import java.util.HashMap;
 import java.util.Optional;
 

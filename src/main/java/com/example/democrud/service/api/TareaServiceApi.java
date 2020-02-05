@@ -1,9 +1,7 @@
 package com.example.democrud.service.api;
 
 import com.example.democrud.commons.GenericServiceAPI;
-import com.example.democrud.model.src.Tarea;
-
-import demo.example.democrud.dto.TareaDto;
+import com.example.democrud.model.Tarea;
 
 public interface TareaServiceApi extends GenericServiceAPI<Tarea, Long> {
 

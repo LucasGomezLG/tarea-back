@@ -2,7 +2,7 @@ package com.example.democrud.service.api;
 
 import java.util.Optional;
 
-import com.example.democrud.model.src.Usuario;
+import com.example.democrud.model.Usuario;
 
 import demo.example.democrud.dto.UsuarioDTO;
 

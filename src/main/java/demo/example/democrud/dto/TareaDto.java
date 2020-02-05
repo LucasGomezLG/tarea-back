@@ -3,8 +3,8 @@ package demo.example.democrud.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.democrud.model.src.Actividad;
-import com.example.democrud.model.src.Tarea;
+import com.example.democrud.model.Actividad;
+import com.example.democrud.model.Tarea;
 
 public class TareaDto {
 
