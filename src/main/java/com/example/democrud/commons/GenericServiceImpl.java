@@ -40,4 +40,19 @@ public abstract class GenericServiceImpl<T, ID extends Serializable> implements 
 	}
 
 	public abstract CrudRepository<T, ID> getDao();
+
+	@Override
+	public Optional<T> findById(ID id){
+		return getDao().findById(id);
+	}
+
+	@Override
+	public Iterable<T> saveAll(Iterable<T> entities){
+		return getDao().saveAll(entities);
+	}
+
+	@Override
+	public void deleteAll(){
+		getDao().deleteAll();
+	}
 }

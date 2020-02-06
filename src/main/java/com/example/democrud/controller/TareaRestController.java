@@ -40,7 +40,6 @@ public class TareaRestController {
 	public ResponseEntity get(@PathVariable Long id ){
 
 		Tarea tarea = tareaServiceApi.get(id);
-
 		return new ResponseEntity <>( tarea , HttpStatus.OK);
 
 	}
@@ -63,9 +62,6 @@ public class TareaRestController {
 		}
 		Tarea newTarea = tareaNueva.parseTarea();
 		newTarea.setUsuario(maybeUsuario.get());
-//		maybeUsuario.get().agregarTarea(newTarea);
-		
-		
 		
 		return new ResponseEntity<>(tareaServiceApi.save(newTarea), HttpStatus.OK);
 		

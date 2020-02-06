@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
+
 import java.util.Optional;
 
 @Service
@@ -32,10 +33,6 @@ public class UsuarioService  extends GenericServiceImpl<Usuario, Long> implement
 
     public Usuario signup(UsuarioDTO usuarioDTO){
         return usuarioDaoApi.save(new Usuario(usuarioDTO.getUsername(),usuarioDTO.getPassword()));
-    }
-
-    public Optional<Usuario> findById(Long id){
-        return usuarioDaoApi.findById(id);
     }
     
     public Usuario save(Usuario user) {
